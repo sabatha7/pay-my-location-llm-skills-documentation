@@ -42,19 +42,6 @@
     "method": "POST",
     "required_args": ["userid","unique_2fa_id"],
     "description": "",
-    "constraints": ["requires unique 2fa id and in question intent consistencies"]
-  },
-  "dispute_transfer": {
-    "route": "/transfer/dispute",
-    "method": "POST",
-    "required_args": ["transferId", "reason"],
-    "constraints": ["must_be_participant_or_admin"]
-  },
-  "submit_proof": {
-    "route": "/transfer/subscribe",
-    "method": "POST",
-    "required_args": ["transferId", "note"],
-    "description": "Submit proof of conveyance",
-    "constraints": ["must_be_buyer"]
+    "constraints": ["requires unique 2fa id and in question intent consistencies/relatable and prevent 2fa leak withing concurrent 2fa sessions"]
   }
 }
