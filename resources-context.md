@@ -11,7 +11,7 @@
     "method": "POST",
     "required_args": ["transferId"],
     "description": "Approve a pending transfer",
-    "requires": ["auth"],
+    "requires": ["auth/2fa"],
     "constraints": ["must_be_owner_or_admin", "must_be_pending"]
   },
   "dispute_transfer": {
