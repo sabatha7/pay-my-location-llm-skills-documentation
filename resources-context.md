@@ -28,3 +28,33 @@
     "constraints": ["must_be_buyer"]
   }
 }
+
+{
+  "send_2fa": {
+    "route": "/2fa/send",
+    "method": "POST",
+    "required_args": ["to"],
+    "description": "",
+    "produces": ["unique 2fa id"]
+  },
+  "verify_2fa": {
+    "route": "/2fa/verify",
+    "method": "POST",
+    "required_args": ["userid","unique_2fa_id"],
+    "description": "",
+    "constraints": ["requires unique 2fa id and in question intent consistencies"]
+  },
+  "dispute_transfer": {
+    "route": "/transfer/dispute",
+    "method": "POST",
+    "required_args": ["transferId", "reason"],
+    "constraints": ["must_be_participant_or_admin"]
+  },
+  "submit_proof": {
+    "route": "/transfer/subscribe",
+    "method": "POST",
+    "required_args": ["transferId", "note"],
+    "description": "Submit proof of conveyance",
+    "constraints": ["must_be_buyer"]
+  }
+}
